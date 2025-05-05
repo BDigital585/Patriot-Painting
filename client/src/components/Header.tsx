@@ -35,14 +35,9 @@ const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 shadow-sm backdrop-blur-sm" : "bg-white"}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="flex justify-between items-center py-4">
-          {/* Logo */}
+          {/* Logo - Text only to avoid duplication */}
           <Link href="/" className="flex items-center">
-            <img 
-              src="/Patriot Painting.png" 
-              alt="Patriot Painting" 
-              className="h-10 w-auto"
-            />
-            <span className="ml-3 text-xl font-bold text-[#0a3161]">Patriot Painting</span>
+            <span className="text-xl font-bold text-[#0a3161]">Patriot Painting</span>
           </Link>
           
           {/* Navigation - Desktop */}
