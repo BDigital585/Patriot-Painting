@@ -59,12 +59,6 @@ const Header = () => {
               About
             </button>
             <button 
-              onClick={() => scrollToSection("testimonials")} 
-              className="text-gray-700 hover:text-[#dd1c1c] font-medium transition"
-            >
-              Testimonials
-            </button>
-            <button 
               onClick={() => scrollToSection("contact")} 
               className="text-gray-700 hover:text-[#dd1c1c] font-medium transition"
             >
@@ -114,12 +108,6 @@ const Header = () => {
             className="text-gray-700 hover:text-[#dd1c1c] font-medium transition"
           >
             About
-          </button>
-          <button 
-            onClick={() => scrollToSection("testimonials")} 
-            className="text-gray-700 hover:text-[#dd1c1c] font-medium transition"
-          >
-            Testimonials
           </button>
           <button 
             onClick={() => scrollToSection("contact")} 

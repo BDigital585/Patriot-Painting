@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import AboutSection from "@/components/AboutSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import FooterSection from "@/components/FooterSection";
 import { useEffect } from "react";
@@ -10,16 +9,16 @@ import { useEffect } from "react";
 const Home = () => {
   // Add page title
   useEffect(() => {
-    document.title = "Professional Services | Modern Landing Page";
+    document.title = "Patriot Painting | Professional Painting Services in Western New York";
     
     // Optional: Add meta description
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute('content', 'Professional services for businesses - web development, data analytics, content strategy, and cybersecurity.');
+      metaDesc.setAttribute('content', 'Patriot Painting provides professional interior and exterior painting, staining, power washing, and gutter cleaning services throughout Western New York.');
     } else {
       const newMetaDesc = document.createElement('meta');
       newMetaDesc.name = 'description';
-      newMetaDesc.content = 'Professional services for businesses - web development, data analytics, content strategy, and cybersecurity.';
+      newMetaDesc.content = 'Patriot Painting provides professional interior and exterior painting, staining, power washing, and gutter cleaning services throughout Western New York.';
       document.head.appendChild(newMetaDesc);
     }
 
@@ -47,7 +46,6 @@ const Home = () => {
         <HeroSection />
         <ServicesSection />
         <AboutSection />
-        <TestimonialsSection />
         <ContactSection />
       </main>
       <FooterSection />
