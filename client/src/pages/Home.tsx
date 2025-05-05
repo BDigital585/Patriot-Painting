@@ -43,7 +43,7 @@ const Home = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main>
+      <main className="pt-0 mt-0">
         <HeroSection />
         <ServicesSection />
         <AboutSection />
