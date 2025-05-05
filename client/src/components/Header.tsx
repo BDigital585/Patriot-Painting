@@ -34,13 +34,13 @@ const Header = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 shadow-sm backdrop-blur-sm" : "bg-white"}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="flex justify-between items-center py-0 md:py-1">
+        <div className="flex justify-between items-center py-2 md:py-3">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img 
               src="/Patriot Painting.png" 
               alt="Patriot Painting" 
-              className="h-14 md:h-16 w-auto"
+              className="h-[56px] md:h-[72px] w-auto"
             />
           </Link>
           
