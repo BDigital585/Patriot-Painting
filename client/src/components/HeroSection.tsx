@@ -10,22 +10,13 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="pt-24 pb-16 md:pt-28 md:pb-24 relative overflow-hidden">
+    <section id="hero" className="pt-20 pb-16 md:pt-24 md:pb-24 relative overflow-hidden">
       {/* Subtle stars and stripes background */}
       <div className="absolute inset-0 opacity-5 z-0">
         <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJzdHJpcGVzIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCI+PHBhdGggZD0iTTAgMCBMIDEwMCAwIEwgMTAwIDIwIEwgMCAyMCBaIiBmaWxsPSIjZGQxYzFjIj48L3BhdGg+PHBhdGggZD0iTTAgMjAgTCAxMDAgMjAgTCAxMDAgNDAgTCAwIDQwIFoiIGZpbGw9IndoaXRlIj48L3BhdGg+PHBhdGggZD0iTTAgNDAgTCAxMDAgNDAgTCAxMDAgNjAgTCAwIDYwIFoiIGZpbGw9IiNkZDFjMWMiPjwvcGF0aD48cGF0aCBkPSJNMCA2MCBMIDEwMCA2MCBMIDI0MCA4MCBMICA4MCAZIiBmaWxsPSJ3aGl0ZSI+PC9wYXRoPjxwYXRoIGQ9Ik0wIDgwIEwgMTAwIDgwIEwgMTAwIDEwMCBMIDAgMTAwIFoiIGZpbGw9IiNkZDFjMWMiPjwvcGF0aD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjc3RyaXBlcykiLz48L3N2Zz4=')]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
-        {/* Logo centered at the top */}
-        <div className="flex justify-center mb-8">
-          <img 
-            src="/Patriot Painting.png" 
-            alt="Patriot Painting Logo" 
-            className="h-32 md:h-40 w-auto"
-          />
-        </div>
-
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
             Proudly Painting <span className="text-[#dd1c1c]">Western New York</span>
