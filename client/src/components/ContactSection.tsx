@@ -104,18 +104,13 @@ const ContactSection = () => {
   const contactInfo = [
     { 
       icon: <Phone className="w-5 h-5" />, 
-      title: "Phone", 
-      content: "(123) 456-7890" 
+      title: "Dustin Garrett", 
+      content: <a href="tel:5853560218" className="hover:text-[#dd1c1c] transition-colors">(585) 356-0218</a>
     },
     { 
-      icon: <Mail className="w-5 h-5" />, 
-      title: "Email", 
-      content: "info@yourcompany.com" 
-    },
-    { 
-      icon: <MapPin className="w-5 h-5" />, 
-      title: "Office", 
-      content: "123 Business Avenue, Suite 500\nSan Francisco, CA 94107" 
+      icon: <Phone className="w-5 h-5" />, 
+      title: "Justin Schmelzer", 
+      content: <a href="tel:5854153370" className="hover:text-[#dd1c1c] transition-colors">(585) 415-3370</a>
     }
   ];
 
@@ -124,18 +119,18 @@ const ContactSection = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#dd1c1c]/10 text-[#dd1c1c] text-sm font-medium mb-4">
               Contact Us
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
             <p className="text-xl text-gray-600 mb-8">
-              Get in touch with our team to discuss how we can help your business grow and succeed.
+              Call us directly for a free quote or send us a message about your painting project. We serve all of Western New York.
             </p>
             
             <div className="space-y-6 mb-8">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-start">
-                  <div className="flex-shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
+                  <div className="flex-shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#dd1c1c]/10 text-[#dd1c1c]">
                     {item.icon}
                   </div>
                   <div className="ml-4">
@@ -200,7 +195,7 @@ const ContactSection = () => {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-6 py-3 rounded-lg font-medium"
+                  className="w-full px-6 py-3 rounded-lg font-medium bg-[#dd1c1c] hover:bg-[#b71c1c] text-white"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
