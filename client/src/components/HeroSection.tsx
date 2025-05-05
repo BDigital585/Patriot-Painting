@@ -10,7 +10,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden">
+    <section id="hero" className="pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
       {/* Subtle stars and stripes background */}
       <div className="absolute inset-0 opacity-5 z-0">
         <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJzdHJpcGVzIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCI+PHBhdGggZD0iTTAgMCBMIDEwMCAwIEwgMTAwIDIwIEwgMCAyMCBaIiBmaWxsPSIjZGQxYzFjIj48L3BhdGg+PHBhdGggZD0iTTAgMjAgTCAxMDAgMjAgTCAxMDAgNDAgTCAwIDQwIFoiIGZpbGw9IndoaXRlIj48L3BhdGg+PHBhdGggZD0iTTAgNDAgTCAxMDAgNDAgTCAxMDAgNjAgTCAwIDYwIFoiIGZpbGw9IiNkZDFjMWMiPjwvcGF0aD48cGF0aCBkPSJNMCA2MCBMIDEwMCA2MCBMIDI0MCA4MCBMICA4MCAZIiBmaWxsPSJ3aGl0ZSI+PC9wYXRoPjxwYXRoIGQ9Ik0wIDgwIEwgMTAwIDgwIEwgMTAwIDEwMCBMIDAgMTAwIFoiIGZpbGw9IiNkZDFjMWMiPjwvcGF0aD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjc3RyaXBlcykiLz48L3N2Zz4=')]"></div>
