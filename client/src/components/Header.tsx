@@ -32,45 +32,45 @@ const Header = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 shadow-sm backdrop-blur-sm" : "bg-white"}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/98 shadow-sm backdrop-blur-sm" : "bg-white"}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="flex justify-between items-center py-1 md:py-2">
+        <div className="flex justify-between items-center py-2 h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img 
               src="/Patriot Painting.png" 
               alt="Patriot Painting" 
-              className="h-[140px] md:h-[180px] w-auto"
+              className="h-[70px] md:h-[90px] w-auto"
             />
           </Link>
           
           {/* Navigation - Desktop */}
-          <nav className="hidden md:flex space-x-8">
-            <button 
-              onClick={() => scrollToSection("services")} 
-              className="text-gray-700 hover:text-[#dd1c1c] font-medium transition"
-            >
-              Services
-            </button>
-            <button 
-              onClick={() => scrollToSection("about")} 
-              className="text-gray-700 hover:text-[#dd1c1c] font-medium transition"
-            >
-              About
-            </button>
-            <button 
-              onClick={() => scrollToSection("contact")} 
-              className="text-gray-700 hover:text-[#dd1c1c] font-medium transition"
-            >
-              Contact
-            </button>
-          </nav>
-          
-          {/* CTA Button - Desktop */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center space-x-6">
+            <nav className="flex space-x-6">
+              <button 
+                onClick={() => scrollToSection("services")} 
+                className="text-gray-800 hover:text-[#dd1c1c] text-sm font-medium transition-colors"
+              >
+                Services
+              </button>
+              <button 
+                onClick={() => scrollToSection("about")} 
+                className="text-gray-800 hover:text-[#dd1c1c] text-sm font-medium transition-colors"
+              >
+                About
+              </button>
+              <button 
+                onClick={() => scrollToSection("contact")} 
+                className="text-gray-800 hover:text-[#dd1c1c] text-sm font-medium transition-colors"
+              >
+                Contact
+              </button>
+            </nav>
+            
+            {/* CTA Button - Desktop */}
             <Button 
               onClick={() => scrollToSection("contact")}
-              className="px-4 py-2 rounded-lg bg-[#dd1c1c] hover:bg-[#b71c1c] text-white"
+              className="px-4 py-1.5 text-sm rounded-md bg-[#dd1c1c] hover:bg-[#b71c1c] text-white shadow-sm"
             >
               Free Quote
             </Button>
@@ -95,31 +95,31 @@ const Header = () => {
       </div>
       
       {/* Mobile Menu */}
-      <div className={`md:hidden px-6 pb-6 pt-2 border-t border-gray-100 ${mobileMenuOpen ? "block" : "hidden"} bg-white`}>
-        <nav className="flex flex-col space-y-4">
+      <div className={`md:hidden px-6 pb-4 pt-2 border-t border-gray-100 ${mobileMenuOpen ? "block" : "hidden"} bg-white shadow-md`}>
+        <nav className="flex flex-col space-y-3">
           <button 
             onClick={() => scrollToSection("services")} 
-            className="text-gray-700 hover:text-[#dd1c1c] font-medium transition"
+            className="text-gray-800 hover:text-[#dd1c1c] text-sm font-medium transition-colors py-2"
           >
             Services
           </button>
           <button 
             onClick={() => scrollToSection("about")} 
-            className="text-gray-700 hover:text-[#dd1c1c] font-medium transition"
+            className="text-gray-800 hover:text-[#dd1c1c] text-sm font-medium transition-colors py-2"
           >
             About
           </button>
           <button 
             onClick={() => scrollToSection("contact")} 
-            className="text-gray-700 hover:text-[#dd1c1c] font-medium transition"
+            className="text-gray-800 hover:text-[#dd1c1c] text-sm font-medium transition-colors py-2"
           >
             Contact
           </button>
           <Button 
             onClick={() => scrollToSection("contact")}
-            className="w-full justify-center bg-[#dd1c1c] hover:bg-[#b71c1c] text-white"
+            className="w-full justify-center mt-1 bg-[#dd1c1c] hover:bg-[#b71c1c] text-white text-sm py-1.5"
           >
-            Request a Free Quote
+            Free Quote
           </Button>
         </nav>
       </div>

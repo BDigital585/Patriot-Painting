@@ -61,9 +61,7 @@ const ImageCarousel = () => {
                   alt={`Patriot Painting project ${index + 1}`}
                   loading="lazy"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent py-2 px-4">
-                  <span className="text-white text-sm font-semibold drop-shadow-md">Project {index + 1}</span>
-                </div>
+
               </div>
             </div>
           ))}
