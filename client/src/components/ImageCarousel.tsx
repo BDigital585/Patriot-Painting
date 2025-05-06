@@ -2,14 +2,16 @@ import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+// Using relative URLs from the base public directory
+// These will be resolved correctly by the browser
 const images = [
-  '/gallery/p1.JPG',
-  '/gallery/p2.JPG',
-  '/gallery/p3.JPG',
-  '/gallery/p4.JPG',
-  '/gallery/p5.JPG',
-  '/gallery/p6.JPG',
-  '/gallery/p7.JPG'
+  './gallery/p1.JPG',
+  './gallery/p2.JPG',
+  './gallery/p3.JPG',
+  './gallery/p4.JPG',
+  './gallery/p5.JPG',
+  './gallery/p6.JPG',
+  './gallery/p7.JPG'
 ];
 
 const ImageCarousel = () => {
