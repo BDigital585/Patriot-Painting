@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
+import ImageCarousel from "./ImageCarousel";
 
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -83,6 +84,10 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
+        
+        {/* Project Gallery Carousel */}
+        <ImageCarousel />
+        
       </div>
     </section>
   );
