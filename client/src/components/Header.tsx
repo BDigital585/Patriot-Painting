@@ -38,36 +38,34 @@ const Header = () => {
         : "bg-gradient-to-r from-blue-50/90 via-white/95 to-red-50/90"
       } before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] before:from-white/30 before:via-transparent before:to-transparent`}>
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
-        <div className="flex justify-between items-center py-2 h-16 md:h-20">
+        <div className="flex justify-between items-center py-2 h-24 md:h-28">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <img 
-              src="/Patriot Painting.png" 
-              alt="Patriot Painting" 
-              className="h-[70px] md:h-[90px] w-auto"
-            />
+            <div className="relative overflow-hidden rounded-lg shadow-lg">
+              <img 
+                src="/Patriot Painting.png" 
+                alt="Patriot Painting" 
+                className="h-[85px] md:h-[115px] w-auto object-contain z-10 relative"
+                style={{filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.2))"}}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-100/40 via-white/10 to-red-100/40 z-0"></div>
+            </div>
           </Link>
           
           {/* Navigation - Desktop */}
           <div className="hidden md:flex items-center space-x-6">
-            <nav className="flex space-x-8">
+            <nav className="flex">
               <button 
                 onClick={() => scrollToSection("services")} 
                 className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[#dd1c1c] after:transition-transform hover:after:origin-bottom-left hover:after:scale-x-100 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
               >
                 SERVICES
               </button>
-              <button 
-                onClick={() => scrollToSection("contact")} 
-                className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[#dd1c1c] after:transition-transform hover:after:origin-bottom-left hover:after:scale-x-100 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
-              >
-                CONTACT
-              </button>
             </nav>
             
             {/* CTA Button - Desktop */}
             <Button 
-              onClick={() => scrollToSection("contact")}
+              onClick={() => scrollToSection("services")}
               className="px-5 py-1.5 text-sm font-semibold rounded-md bg-gradient-to-r from-[#dd1c1c] to-[#b71c1c] hover:from-[#b71c1c] hover:to-[#dd1c1c] text-white shadow-md transition-all duration-300 shimmer"
             >
               Free Quote
@@ -101,14 +99,8 @@ const Header = () => {
           >
             SERVICES
           </button>
-          <button 
-            onClick={() => scrollToSection("contact")} 
-            className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
-          >
-            CONTACT
-          </button>
           <Button 
-            onClick={() => scrollToSection("contact")}
+            onClick={() => scrollToSection("services")}
             className="w-full justify-center mt-2 bg-gradient-to-r from-[#dd1c1c] to-[#b71c1c] hover:from-[#b71c1c] hover:to-[#dd1c1c] text-white text-sm font-semibold py-2 shadow-md transition-all duration-300 shimmer"
           >
             Free Quote

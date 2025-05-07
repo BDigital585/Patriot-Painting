@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
-import ContactSection from "@/components/ContactSection";
 import { useEffect } from "react";
 
 const Home = () => {
@@ -43,7 +42,6 @@ const Home = () => {
       <main className="pt-0 mt-0">
         <HeroSection />
         <ServicesSection />
-        <ContactSection />
       </main>
     </div>
   );
