@@ -68,7 +68,7 @@ const Header = () => {
             {/* CTA Button - Desktop */}
             <Button 
               onClick={() => scrollToSection("contact")}
-              className="px-5 py-1.5 text-sm font-semibold rounded-md bg-gradient-to-r from-[#dd1c1c] to-[#b71c1c] hover:from-[#b71c1c] hover:to-[#dd1c1c] text-white shadow-md transition-all duration-300"
+              className="px-5 py-1.5 text-sm font-semibold rounded-md bg-gradient-to-r from-[#dd1c1c] to-[#b71c1c] hover:from-[#b71c1c] hover:to-[#dd1c1c] text-white shadow-md transition-all duration-300 shimmer"
             >
               Free Quote
             </Button>
@@ -97,19 +97,19 @@ const Header = () => {
         <nav className="flex flex-col space-y-3">
           <button 
             onClick={() => scrollToSection("services")} 
-            className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50"
+            className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
           >
             SERVICES
           </button>
           <button 
             onClick={() => scrollToSection("contact")} 
-            className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50"
+            className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
           >
             CONTACT
           </button>
           <Button 
             onClick={() => scrollToSection("contact")}
-            className="w-full justify-center mt-2 bg-gradient-to-r from-[#dd1c1c] to-[#b71c1c] hover:from-[#b71c1c] hover:to-[#dd1c1c] text-white text-sm font-semibold py-2 shadow-md transition-all duration-300"
+            className="w-full justify-center mt-2 bg-gradient-to-r from-[#dd1c1c] to-[#b71c1c] hover:from-[#b71c1c] hover:to-[#dd1c1c] text-white text-sm font-semibold py-2 shadow-md transition-all duration-300 shimmer"
           >
             Free Quote
           </Button>
