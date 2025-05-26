@@ -1,5 +1,5 @@
 import { ArrowUp } from "lucide-react";
-import SocialLinks from "./SocialLinks";
+
 
 const FooterSection = () => {
   const scrollToTop = () => {
@@ -25,7 +25,7 @@ const FooterSection = () => {
             <p className="text-gray-400 mb-6">
               Providing innovative solutions for businesses since 2010. Our mission is to help companies thrive in the digital landscape.
             </p>
-            <SocialLinks />
+
           </div>
           
           <div>
