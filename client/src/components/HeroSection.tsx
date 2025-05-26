@@ -57,7 +57,7 @@ const HeroSection = () => {
                   </svg>
                 </div>
                 <h3 className="font-bold text-lg">Quality Guaranteed</h3>
-                <p className="text-sm mt-2">Every project completed with excellence and attention to detail</p>
+                <p className="text-sm mt-2">Every project completed with excellence and attention to detail.</p>
               </div>
             </div>
             <div className="col-span-3 md:col-span-1 bg-red-50 p-4 rounded-lg border border-[#dd1c1c] shadow-md">
@@ -68,7 +68,7 @@ const HeroSection = () => {
                   </svg>
                 </div>
                 <h3 className="font-bold text-lg">Locally Owned</h3>
-                <p className="text-sm mt-2">Proudly serving Western New York communities since 2010</p>
+                <p className="text-sm mt-2">Proudly serving Western New York communities since 2010.</p>
               </div>
             </div>
             <div className="col-span-3 md:col-span-1 bg-blue-50 p-4 rounded-lg border border-[#0a3161] shadow-md">
@@ -79,7 +79,7 @@ const HeroSection = () => {
                   </svg>
                 </div>
                 <h3 className="font-bold text-lg">On-Time Service</h3>
-                <p className="text-sm mt-2">Professional, punctual, and efficient from start to finish</p>
+                <p className="text-sm mt-2">Professional, punctual, and efficient from start to finish.</p>
               </div>
             </div>
           </div>
