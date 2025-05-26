@@ -65,7 +65,7 @@ const ServicesSection = () => {
     <section id="services" className="py-16 md:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold">Our Professional Painting Services</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Our Professional Services</h2>
           <p className="mt-4 text-xl text-gray-600">
             We provide a full range of premium painting and maintenance services for homes and businesses across Western New York.
           </p>
