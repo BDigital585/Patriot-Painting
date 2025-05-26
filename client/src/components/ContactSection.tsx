@@ -6,7 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 import { apiRequest } from "@/lib/queryClient";
 import { validateEmail } from "@/lib/validation";
-import SocialLinks from "./SocialLinks";
+
 
 interface ContactFormData {
   name: string;
@@ -141,10 +141,7 @@ const ContactSection = () => {
               ))}
             </div>
             
-            <div className="social-links">
-              <h3 className="text-lg font-medium mb-4">Connect With Us</h3>
-              <SocialLinks />
-            </div>
+
           </div>
           
           <div>
