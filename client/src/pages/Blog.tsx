@@ -1,3 +1,7 @@
+import { Link } from "wouter";
+import { blogPosts } from "@/data/blogPosts";
+import { ArrowRight, Calendar } from "lucide-react";
+
 const Blog = () => {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -12,9 +16,44 @@ const Blog = () => {
           </p>
         </div>
         
-        {/* Blog content will be added here */}
-        <div className="text-center py-20">
-          <p className="text-gray-500 text-lg">Blog content coming soon...</p>
+        <div className="grid md:grid-cols-2 gap-8">
+          {blogPosts.map((post) => {
+            const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            });
+            
+            return (
+              <article 
+                key={post.id} 
+                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
+              >
+                <div className="p-8">
+                  <div className="flex items-center text-gray-500 text-sm mb-4">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    {formattedDate}
+                  </div>
+                  
+                  <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 group-hover:text-[#0a3161] transition-colors">
+                    {post.title}
+                  </h2>
+                  
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                  
+                  <Link 
+                    href={`/blog/${post.slug}`}
+                    className="inline-flex items-center text-[#dd1c1c] hover:text-[#b71c1c] font-medium transition-colors group-hover:translate-x-1 transform duration-300"
+                  >
+                    Read Full Article
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </div>
