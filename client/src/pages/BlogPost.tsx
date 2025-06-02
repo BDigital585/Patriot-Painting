@@ -1,6 +1,6 @@
 import { useParams, Link } from "wouter";
 import { blogPosts } from "@/data/blogPosts";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Home } from "lucide-react";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -28,13 +28,23 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-6 md:px-8 py-16 md:py-24">
-        <Link 
-          href="/blog" 
-          className="inline-flex items-center text-[#dd1c1c] hover:text-[#b71c1c] transition-colors mb-8"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Blog
-        </Link>
+        <div className="flex items-center justify-between mb-8">
+          <Link 
+            href="/blog" 
+            className="inline-flex items-center text-[#dd1c1c] hover:text-[#b71c1c] transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Blog
+          </Link>
+          
+          <Link 
+            href="/" 
+            className="inline-flex items-center text-[#0a3161] hover:text-[#dd1c1c] transition-colors"
+          >
+            <Home className="w-4 h-4 mr-2" />
+            Back to Home
+          </Link>
+        </div>
         
         <article className="bg-white rounded-2xl shadow-lg overflow-hidden">
           <div className="p-8 md:p-12">
