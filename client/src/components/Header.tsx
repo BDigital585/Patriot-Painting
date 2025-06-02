@@ -57,6 +57,12 @@ const Header = () => {
               >
                 SERVICES
               </button>
+              <Link 
+                href="/blog"
+                className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[#dd1c1c] after:transition-transform hover:after:origin-bottom-left hover:after:scale-x-100 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
+              >
+                BLOG
+              </Link>
               <button 
                 onClick={() => scrollToSection("contact")} 
                 className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[#dd1c1c] after:transition-transform hover:after:origin-bottom-left hover:after:scale-x-100 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
@@ -101,6 +107,13 @@ const Header = () => {
           >
             SERVICES
           </button>
+          <Link 
+            href="/blog"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
+          >
+            BLOG
+          </Link>
           <button 
             onClick={() => scrollToSection("contact")} 
             className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
