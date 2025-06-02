@@ -32,10 +32,10 @@ const ServiceCard = ({ icon, title, description, iconBgColor, iconColor }: Servi
         </p>
         
         {/* Call-to-action button */}
-        <div className="inline-flex items-center bg-white/20 hover:bg-white/30 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-white font-medium opacity-80 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 backdrop-blur-sm border border-white/20">
-          <span className="text-xs md:text-sm mr-2">Learn More</span>
+        <a href="#contact" className="inline-flex items-center bg-white/20 hover:bg-white/30 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-white font-medium opacity-80 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 backdrop-blur-sm border border-white/20">
+          <span className="text-xs md:text-sm mr-2">Contact</span>
           <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-300" />
-        </div>
+        </a>
       </div>
     </div>
   );
@@ -46,36 +46,36 @@ const services = [
     icon: <PaintBucket className="w-8 h-8" />,
     title: "Interior Painting",
     description: "High-quality interior painting services for walls, ceilings, trim, and more. We ensure clean lines and premium finishes for your home.",
-    iconBgColor: "bg-gradient-to-br from-red-500 via-red-600 to-red-700",
-    iconColor: "text-red-700"
+    iconBgColor: "bg-gradient-to-br from-[#dd1c1c] via-red-600 to-red-800",
+    iconColor: "text-red-800"
   },
   {
     icon: <Home className="w-8 h-8" />,
     title: "Exterior Painting",
     description: "Enhance your home's curb appeal with our exterior painting services. Weather-resistant finishes that protect and beautify your property.",
-    iconBgColor: "bg-gradient-to-br from-blue-500 via-blue-600 to-blue-800",
-    iconColor: "text-blue-800"
+    iconBgColor: "bg-gradient-to-br from-[#0a3161] via-blue-700 to-blue-900",
+    iconColor: "text-blue-900"
   },
   {
     icon: <Droplet className="w-8 h-8" />,
     title: "Staining",
     description: "Professional staining services for decks, fences, cabinets, and other wood surfaces. We bring out the natural beauty of your wood elements.",
-    iconBgColor: "bg-gradient-to-br from-amber-500 via-orange-500 to-orange-600",
-    iconColor: "text-orange-700"
+    iconBgColor: "bg-gradient-to-br from-[#dd1c1c] via-red-500 to-red-700",
+    iconColor: "text-red-800"
   },
   {
     icon: <Waves className="w-8 h-8" />,
     title: "Power Washing",
     description: "Restore your surfaces to like-new condition with our thorough power washing services for siding, driveways, patios, and more.",
-    iconBgColor: "bg-gradient-to-br from-cyan-400 via-cyan-500 to-blue-600",
-    iconColor: "text-cyan-800"
+    iconBgColor: "bg-gradient-to-br from-[#0a3161] via-blue-600 to-blue-800",
+    iconColor: "text-blue-900"
   },
   {
     icon: <Trash2 className="w-8 h-8" />,
     title: "Gutter Cleaning",
     description: "Keep your home protected with our comprehensive gutter cleaning services. We remove debris and ensure proper water drainage.",
-    iconBgColor: "bg-gradient-to-br from-green-500 via-emerald-500 to-emerald-600",
-    iconColor: "text-emerald-800"
+    iconBgColor: "bg-gradient-to-br from-slate-600 via-slate-700 to-gray-800",
+    iconColor: "text-slate-900"
   }
 ];
 

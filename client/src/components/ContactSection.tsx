@@ -117,87 +117,25 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="grid md:grid-cols-2 gap-12">
-          <div>
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#dd1c1c]/10 text-[#dd1c1c] text-sm font-medium mb-4">
-              Contact Us
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Call us directly for a free quote or send us a message about your painting project. We serve all of Western New York.
-            </p>
-            
-            <div className="space-y-6 mb-8">
-              {contactInfo.map((item, index) => (
-                <div key={index} className="flex items-start">
-                  <div className="flex-shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#dd1c1c]/10 text-[#dd1c1c]">
-                    {item.icon}
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-medium">{item.title}</h3>
-                    <p className="text-gray-600 whitespace-pre-line">{item.content}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#dd1c1c]/10 text-[#dd1c1c] text-sm font-medium mb-4">
+            Contact Us
           </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
+          <p className="text-xl text-gray-600 mb-12">
+            Call us directly for a free quote about your painting project. We serve all of Western New York.
+          </p>
           
-          <div>
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <h3 className="text-2xl font-bold mb-6">Send Us a Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your name"
-                    className={`w-full px-4 py-3 transition ${errors.name ? 'border-red-500' : ''}`}
-                  />
-                  {errors.name && <div className="text-red-500 text-sm mt-1">{errors.name}</div>}
+          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            {contactInfo.map((item, index) => (
+              <div key={index} className="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg">
+                <div className="flex-shrink-0 inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#dd1c1c]/10 text-[#dd1c1c] mb-4">
+                  {item.icon}
                 </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                  <Input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="your.email@example.com"
-                    className={`w-full px-4 py-3 transition ${errors.email ? 'border-red-500' : ''}`}
-                  />
-                  {errors.email && <div className="text-red-500 text-sm mt-1">{errors.email}</div>}
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={4}
-                    placeholder="How can we help you?"
-                    className={`w-full px-4 py-3 transition ${errors.message ? 'border-red-500' : ''}`}
-                  />
-                  {errors.message && <div className="text-red-500 text-sm mt-1">{errors.message}</div>}
-                </div>
-                
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full px-6 py-3 rounded-lg font-medium bg-[#dd1c1c] hover:bg-[#b71c1c] text-white"
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
-              </form>
-            </div>
+                <h3 className="text-lg font-medium mb-2">{item.title}</h3>
+                <div className="text-gray-600">{item.content}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
