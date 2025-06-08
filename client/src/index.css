@@ -151,6 +151,17 @@
       background-attachment: scroll; /* Use scroll instead of fixed for iOS */
     }
   }
+
+  /* Blog hero background responsive styles */
+  .blog-hero-bg {
+    background-size: 60% auto;
+  }
+
+  @media (max-width: 768px) {
+    .blog-hero-bg {
+      background-size: 100% auto;
+    }
+  }
 }
 
 @layer utilities {
