@@ -75,33 +75,34 @@ const Header = () => {
           {/* Navigation - Desktop */}
           <div className="hidden md:flex items-center space-x-6">
             <nav className="flex space-x-8">
-              <div className="relative" onClick={(e) => e.stopPropagation()}>
+              <div className="relative group">
                 <button 
-                  onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                   className="flex items-center text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[#dd1c1c] after:transition-transform hover:after:origin-bottom-left hover:after:scale-x-100 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
                 >
                   SERVICES
-                  <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className="w-4 h-4 ml-1" />
                 </button>
                 
                 {/* Services Dropdown */}
-                {servicesDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-[60]">
-                    {services.map((service, index) => (
-                      <Link 
-                        key={index}
-                        href={service.link}
-                        onClick={() => setServicesDropdownOpen(false)}
-                        className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] transition-colors"
-                      >
-                        <div className="text-[#0a3161] mr-3">
-                          {service.icon}
-                        </div>
-                        <span className="font-medium">{service.name}</span>
-                      </Link>
-                    ))}
+                <div className="absolute left-0 top-full mt-2 w-56 bg-white rounded-lg shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="py-2">
+                    <Link href="/services/interior-painting" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c]">
+                      Interior Painting
+                    </Link>
+                    <Link href="/services/exterior-painting" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c]">
+                      Exterior Painting
+                    </Link>
+                    <Link href="/services/staining" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c]">
+                      Staining
+                    </Link>
+                    <Link href="/services/power-washing" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c]">
+                      Power Washing
+                    </Link>
+                    <Link href="/services/gutter-cleaning" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c]">
+                      Gutter Cleaning
+                    </Link>
                   </div>
-                )}
+                </div>
               </div>
               <Link 
                 href="/blog"
@@ -157,23 +158,42 @@ const Header = () => {
               <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
             </button>
             {mobileServicesOpen && (
-              <div className="ml-4 mt-2 space-y-2">
-                {services.map((service, index) => (
-                  <Link 
-                    key={index}
-                    href={service.link}
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      setMobileServicesOpen(false);
-                    }}
-                    className="flex items-center px-2 py-2 text-gray-600 hover:text-[#dd1c1c] transition-colors text-sm"
-                  >
-                    <div className="text-[#0a3161] mr-2">
-                      {service.icon}
-                    </div>
-                    <span>{service.name}</span>
-                  </Link>
-                ))}
+              <div className="ml-4 mt-2 space-y-1">
+                <Link 
+                  href="/services/interior-painting"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-2 py-2 text-gray-600 hover:text-[#dd1c1c] transition-colors text-sm"
+                >
+                  Interior Painting
+                </Link>
+                <Link 
+                  href="/services/exterior-painting"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-2 py-2 text-gray-600 hover:text-[#dd1c1c] transition-colors text-sm"
+                >
+                  Exterior Painting
+                </Link>
+                <Link 
+                  href="/services/staining"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-2 py-2 text-gray-600 hover:text-[#dd1c1c] transition-colors text-sm"
+                >
+                  Staining
+                </Link>
+                <Link 
+                  href="/services/power-washing"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-2 py-2 text-gray-600 hover:text-[#dd1c1c] transition-colors text-sm"
+                >
+                  Power Washing
+                </Link>
+                <Link 
+                  href="/services/gutter-cleaning"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-2 py-2 text-gray-600 hover:text-[#dd1c1c] transition-colors text-sm"
+                >
+                  Gutter Cleaning
+                </Link>
               </div>
             )}
           </div>
