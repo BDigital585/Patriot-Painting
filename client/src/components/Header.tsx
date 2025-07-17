@@ -75,32 +75,14 @@ const Header = () => {
           {/* Navigation - Desktop */}
           <div className="hidden md:flex items-center space-x-6 overflow-visible">
             <nav className="flex space-x-8 overflow-visible">
-              <div className="relative group overflow-visible">
+              <div className="relative">
                 <button 
+                  onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                   className="flex items-center text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[#dd1c1c] after:transition-transform hover:after:origin-bottom-left hover:after:scale-x-100 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
                 >
                   SERVICES
-                  <ChevronDown className="w-4 h-4 ml-1" />
+                  <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
-                
-                {/* Services Dropdown */}
-                <div className="absolute left-0 top-full mt-1 w-56 bg-white rounded-lg shadow-2xl border-2 border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[100]">
-                  <Link href="/services/interior-painting" className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] border-b border-gray-100 first:rounded-t-lg">
-                    Interior Painting
-                  </Link>
-                  <Link href="/services/exterior-painting" className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] border-b border-gray-100">
-                    Exterior Painting
-                  </Link>
-                  <Link href="/services/staining" className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] border-b border-gray-100">
-                    Staining
-                  </Link>
-                  <Link href="/services/power-washing" className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] border-b border-gray-100">
-                    Power Washing
-                  </Link>
-                  <Link href="/services/gutter-cleaning" className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] last:rounded-b-lg">
-                    Gutter Cleaning
-                  </Link>
-                </div>
               </div>
               <Link 
                 href="/blog"
@@ -124,6 +106,27 @@ const Header = () => {
               Free Quote
             </Button>
           </div>
+          
+          {/* Services Dropdown - Fixed Position */}
+          {servicesDropdownOpen && (
+            <div className="fixed top-20 left-1/2 transform -translate-x-1/2 w-64 bg-white rounded-lg shadow-2xl border-2 border-gray-200 z-[9999] md:block hidden">
+              <Link href="/services/interior-painting" onClick={() => setServicesDropdownOpen(false)} className="block px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] border-b border-gray-100 first:rounded-t-lg font-medium">
+                Interior Painting
+              </Link>
+              <Link href="/services/exterior-painting" onClick={() => setServicesDropdownOpen(false)} className="block px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] border-b border-gray-100 font-medium">
+                Exterior Painting
+              </Link>
+              <Link href="/services/staining" onClick={() => setServicesDropdownOpen(false)} className="block px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] border-b border-gray-100 font-medium">
+                Staining
+              </Link>
+              <Link href="/services/power-washing" onClick={() => setServicesDropdownOpen(false)} className="block px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] border-b border-gray-100 font-medium">
+                Power Washing
+              </Link>
+              <Link href="/services/gutter-cleaning" onClick={() => setServicesDropdownOpen(false)} className="block px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] last:rounded-b-lg font-medium">
+                Gutter Cleaning
+              </Link>
+            </div>
+          )}
           
           {/* Mobile Menu Button */}
           <button 
