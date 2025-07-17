@@ -56,12 +56,12 @@ const Header = () => {
   }, [servicesDropdownOpen]);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 shimmer ${
+    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 shimmer overflow-visible ${
         scrolled 
         ? "bg-gradient-to-r from-white/95 via-white/98 to-white/95 shadow-md backdrop-blur-sm" 
         : "bg-gradient-to-r from-blue-50/90 via-white/95 to-red-50/90"
       } before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] before:from-white/30 before:via-transparent before:to-transparent`}>
-      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10 overflow-visible">
         <div className="flex justify-between items-center py-2 h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -73,9 +73,9 @@ const Header = () => {
           </Link>
           
           {/* Navigation - Desktop */}
-          <div className="hidden md:flex items-center space-x-6">
-            <nav className="flex space-x-8">
-              <div className="relative group">
+          <div className="hidden md:flex items-center space-x-6 overflow-visible">
+            <nav className="flex space-x-8 overflow-visible">
+              <div className="relative group overflow-visible">
                 <button 
                   className="flex items-center text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[#dd1c1c] after:transition-transform hover:after:origin-bottom-left hover:after:scale-x-100 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
                 >
