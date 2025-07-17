@@ -28,6 +28,11 @@ const BlogPost = () => {
     linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`
   };
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Set meta tags for social media sharing
   useEffect(() => {
     if (post && typeof window !== 'undefined') {
