@@ -1,8 +1,13 @@
 import { Link } from "wouter";
 import { blogPosts } from "@/data/blogPosts";
 import { ArrowRight, Calendar, Home } from "lucide-react";
+import { useEffect } from "react";
 
 const Blog = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="min-h-screen">
       {/* Hero Section with Background */}
