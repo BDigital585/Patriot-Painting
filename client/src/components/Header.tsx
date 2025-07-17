@@ -107,27 +107,6 @@ const Header = () => {
             </Button>
           </div>
           
-          {/* Services Dropdown - Fixed Position */}
-          {servicesDropdownOpen && (
-            <div className="fixed top-24 left-1/2 transform -translate-x-1/2 w-64 bg-white rounded-lg shadow-2xl border-2 border-gray-200 z-[9999] md:block hidden">
-              <Link href="/services/interior-painting" onClick={() => setServicesDropdownOpen(false)} className="block px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] border-b border-gray-100 first:rounded-t-lg font-medium">
-                Interior Painting
-              </Link>
-              <Link href="/services/exterior-painting" onClick={() => setServicesDropdownOpen(false)} className="block px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] border-b border-gray-100 font-medium">
-                Exterior Painting
-              </Link>
-              <Link href="/services/staining" onClick={() => setServicesDropdownOpen(false)} className="block px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] border-b border-gray-100 font-medium">
-                Staining
-              </Link>
-              <Link href="/services/power-washing" onClick={() => setServicesDropdownOpen(false)} className="block px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] border-b border-gray-100 font-medium">
-                Power Washing
-              </Link>
-              <Link href="/services/gutter-cleaning" onClick={() => setServicesDropdownOpen(false)} className="block px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] last:rounded-b-lg font-medium">
-                Gutter Cleaning
-              </Link>
-            </div>
-          )}
-          
           {/* Mobile Menu Button */}
           <button 
             onClick={toggleMobileMenu}
@@ -140,85 +119,80 @@ const Header = () => {
                 strokeLinejoin="round" 
                 strokeWidth="2" 
                 d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-              ></path>
+              />
             </svg>
           </button>
         </div>
-      </div>
-      
-      {/* Mobile Menu */}
-      <div className={`md:hidden px-6 pb-4 pt-2 border-t border-gray-100 ${mobileMenuOpen ? "block" : "hidden"} bg-gradient-to-b from-white to-blue-50/30 shadow-md backdrop-blur-sm`}>
-        <nav className="flex flex-col space-y-3">
-          {/* Services with Dropdown */}
-          <div>
-            <button 
-              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-              className="flex items-center justify-between w-full text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)] text-left"
-            >
-              SERVICES
-              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
-            </button>
-            {mobileServicesOpen && (
-              <div className="ml-4 mt-2 space-y-1">
-                <Link 
-                  href="/services/interior-painting"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-2 py-2 text-gray-600 hover:text-[#dd1c1c] transition-colors text-sm"
-                >
+        
+        {/* Services Dropdown - Full Screen Overlay */}
+        {servicesDropdownOpen && (
+          <div className="fixed inset-0 bg-black/20 z-[9998]" onClick={() => setServicesDropdownOpen(false)}>
+            <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-72 bg-white rounded-lg shadow-2xl border z-[9999]" onClick={(e) => e.stopPropagation()}>
+              <div className="py-2">
+                <Link href="/services/interior-painting" onClick={() => setServicesDropdownOpen(false)} className="block px-6 py-3 text-gray-800 hover:bg-blue-50 hover:text-[#dd1c1c] border-b border-gray-100 font-medium text-base">
                   Interior Painting
                 </Link>
-                <Link 
-                  href="/services/exterior-painting"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-2 py-2 text-gray-600 hover:text-[#dd1c1c] transition-colors text-sm"
-                >
+                <Link href="/services/exterior-painting" onClick={() => setServicesDropdownOpen(false)} className="block px-6 py-3 text-gray-800 hover:bg-blue-50 hover:text-[#dd1c1c] border-b border-gray-100 font-medium text-base">
                   Exterior Painting
                 </Link>
-                <Link 
-                  href="/services/staining"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-2 py-2 text-gray-600 hover:text-[#dd1c1c] transition-colors text-sm"
-                >
+                <Link href="/services/staining" onClick={() => setServicesDropdownOpen(false)} className="block px-6 py-3 text-gray-800 hover:bg-blue-50 hover:text-[#dd1c1c] border-b border-gray-100 font-medium text-base">
                   Staining
                 </Link>
-                <Link 
-                  href="/services/power-washing"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-2 py-2 text-gray-600 hover:text-[#dd1c1c] transition-colors text-sm"
-                >
+                <Link href="/services/power-washing" onClick={() => setServicesDropdownOpen(false)} className="block px-6 py-3 text-gray-800 hover:bg-blue-50 hover:text-[#dd1c1c] border-b border-gray-100 font-medium text-base">
                   Power Washing
                 </Link>
-                <Link 
-                  href="/services/gutter-cleaning"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-2 py-2 text-gray-600 hover:text-[#dd1c1c] transition-colors text-sm"
-                >
+                <Link href="/services/gutter-cleaning" onClick={() => setServicesDropdownOpen(false)} className="block px-6 py-3 text-gray-800 hover:bg-blue-50 hover:text-[#dd1c1c] font-medium text-base rounded-b-lg">
                   Gutter Cleaning
                 </Link>
               </div>
-            )}
+            </div>
           </div>
-          
-          <Link 
-            href="/blog"
-            onClick={() => setMobileMenuOpen(false)}
-            className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)] text-left block"
-          >
-            BLOG
-          </Link>
-          <button 
-            onClick={() => scrollToSection("contact")} 
-            className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)] text-left"
-          >
-            CONTACT
-          </button>
-          <Button 
-            onClick={() => scrollToSection("contact")}
-            className="w-full justify-center mt-2 bg-gradient-to-r from-[#dd1c1c] to-[#b71c1c] hover:from-[#b71c1c] hover:to-[#dd1c1c] text-white text-sm font-semibold py-2 shadow-md transition-all duration-300 shimmer"
-          >
-            Free Quote
-          </Button>
-        </nav>
+        )}
+        
+        {/* Mobile Menu */}
+        <div className={`md:hidden px-6 pb-4 pt-2 border-t border-gray-100 ${mobileMenuOpen ? "block" : "hidden"} bg-gradient-to-b from-white to-blue-50/30 shadow-md backdrop-blur-sm`}>
+          <nav className="flex flex-col space-y-3">
+            {/* Services with Dropdown */}
+            <div>
+              <button 
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                className="flex items-center justify-between w-full text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)] text-left"
+              >
+                SERVICES
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {mobileServicesOpen && (
+                <div className="ml-4 mt-2 space-y-1">
+                  <Link href="/services/interior-painting" onClick={() => setMobileMenuOpen(false)} className="block px-2 py-2 text-gray-600 hover:text-[#dd1c1c] transition-colors text-sm">
+                    Interior Painting
+                  </Link>
+                  <Link href="/services/exterior-painting" onClick={() => setMobileMenuOpen(false)} className="block px-2 py-2 text-gray-600 hover:text-[#dd1c1c] transition-colors text-sm">
+                    Exterior Painting
+                  </Link>
+                  <Link href="/services/staining" onClick={() => setMobileMenuOpen(false)} className="block px-2 py-2 text-gray-600 hover:text-[#dd1c1c] transition-colors text-sm">
+                    Staining
+                  </Link>
+                  <Link href="/services/power-washing" onClick={() => setMobileMenuOpen(false)} className="block px-2 py-2 text-gray-600 hover:text-[#dd1c1c] transition-colors text-sm">
+                    Power Washing
+                  </Link>
+                  <Link href="/services/gutter-cleaning" onClick={() => setMobileMenuOpen(false)} className="block px-2 py-2 text-gray-600 hover:text-[#dd1c1c] transition-colors text-sm">
+                    Gutter Cleaning
+                  </Link>
+                </div>
+              )}
+            </div>
+            
+            <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)] text-left block">
+              BLOG
+            </Link>
+            <button onClick={() => { scrollToSection("contact"); setMobileMenuOpen(false); }} className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)] text-left">
+              CONTACT
+            </button>
+            <Button onClick={() => { scrollToSection("contact"); setMobileMenuOpen(false); }} className="w-full justify-center mt-2 bg-gradient-to-r from-[#dd1c1c] to-[#b71c1c] hover:from-[#b71c1c] hover:to-[#dd1c1c] text-white text-sm font-semibold py-2 shadow-md transition-all duration-300 shimmer">
+              Free Quote
+            </Button>
+          </nav>
+        </div>
       </div>
     </header>
   );
