@@ -109,7 +109,7 @@ const Header = () => {
           
           {/* Services Dropdown - Fixed Position */}
           {servicesDropdownOpen && (
-            <div className="fixed top-20 left-1/2 transform -translate-x-1/2 w-64 bg-white rounded-lg shadow-2xl border-2 border-gray-200 z-[9999] md:block hidden">
+            <div className="fixed top-24 left-1/2 transform -translate-x-1/2 w-64 bg-white rounded-lg shadow-2xl border-2 border-gray-200 z-[9999] md:block hidden">
               <Link href="/services/interior-painting" onClick={() => setServicesDropdownOpen(false)} className="block px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] border-b border-gray-100 first:rounded-t-lg font-medium">
                 Interior Painting
               </Link>
