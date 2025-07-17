@@ -56,7 +56,7 @@ const Header = () => {
   }, [servicesDropdownOpen]);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 shimmer ${
+    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 shimmer ${
         scrolled 
         ? "bg-gradient-to-r from-white/95 via-white/98 to-white/95 shadow-md backdrop-blur-sm" 
         : "bg-gradient-to-r from-blue-50/90 via-white/95 to-red-50/90"
@@ -84,24 +84,22 @@ const Header = () => {
                 </button>
                 
                 {/* Services Dropdown */}
-                <div className="absolute left-0 top-full mt-2 w-56 bg-white rounded-lg shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                  <div className="py-2">
-                    <Link href="/services/interior-painting" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c]">
-                      Interior Painting
-                    </Link>
-                    <Link href="/services/exterior-painting" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c]">
-                      Exterior Painting
-                    </Link>
-                    <Link href="/services/staining" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c]">
-                      Staining
-                    </Link>
-                    <Link href="/services/power-washing" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c]">
-                      Power Washing
-                    </Link>
-                    <Link href="/services/gutter-cleaning" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c]">
-                      Gutter Cleaning
-                    </Link>
-                  </div>
+                <div className="absolute left-0 top-full mt-1 w-56 bg-white rounded-lg shadow-2xl border-2 border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[100]">
+                  <Link href="/services/interior-painting" className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] border-b border-gray-100 first:rounded-t-lg">
+                    Interior Painting
+                  </Link>
+                  <Link href="/services/exterior-painting" className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] border-b border-gray-100">
+                    Exterior Painting
+                  </Link>
+                  <Link href="/services/staining" className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] border-b border-gray-100">
+                    Staining
+                  </Link>
+                  <Link href="/services/power-washing" className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] border-b border-gray-100">
+                    Power Washing
+                  </Link>
+                  <Link href="/services/gutter-cleaning" className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] last:rounded-b-lg">
+                    Gutter Cleaning
+                  </Link>
                 </div>
               </div>
               <Link 
