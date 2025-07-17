@@ -1,8 +1,13 @@
 import { Link } from "wouter";
 import { ArrowLeft, Waves, CheckCircle, Phone, Zap, Home, Car } from "lucide-react";
 import Header from "@/components/Header";
+import { useEffect } from "react";
 
 const PowerWashing = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const features = [
     "High-pressure cleaning equipment",
     "Eco-friendly cleaning solutions",

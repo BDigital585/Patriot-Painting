@@ -1,8 +1,13 @@
 import { Link } from "wouter";
 import { ArrowLeft, Droplet, CheckCircle, Phone, Palette, TreePine, Sparkles } from "lucide-react";
 import Header from "@/components/Header";
+import { useEffect } from "react";
 
 const Staining = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const features = [
     "Wood surface assessment and preparation",
     "Premium stain selection consultation",

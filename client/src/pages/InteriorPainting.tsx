@@ -1,8 +1,13 @@
 import { Link } from "wouter";
 import { ArrowLeft, PaintBucket, CheckCircle, Phone } from "lucide-react";
 import Header from "@/components/Header";
+import { useEffect } from "react";
 
 const InteriorPainting = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const features = [
     "Professional color consultation",
     "High-quality premium paints",
