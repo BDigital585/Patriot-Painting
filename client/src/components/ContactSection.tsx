@@ -128,12 +128,23 @@ const ContactSection = () => {
           
           <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
             {contactInfo.map((item, index) => (
-              <div key={index} className="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg">
-                <div className="flex-shrink-0 inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#dd1c1c]/10 text-[#dd1c1c] mb-4">
-                  {item.icon}
+              <div key={index} className="group relative overflow-hidden p-8 bg-gradient-to-br from-white via-blue-50/30 to-red-50/30 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/50 backdrop-blur-sm">
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#dd1c1c]/5 via-transparent to-[#0a3161]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Content */}
+                <div className="relative z-10 flex flex-col items-center text-center">
+                  <div className="flex-shrink-0 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#dd1c1c]/10 to-[#0a3161]/10 text-[#dd1c1c] mb-6 group-hover:scale-110 transition-transform duration-300">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-[#0a3161] transition-colors duration-300">{item.title}</h3>
+                  <div className="text-lg text-gray-700 font-medium group-hover:text-[#dd1c1c] transition-colors duration-300">{item.content}</div>
                 </div>
-                <h3 className="text-lg font-medium mb-2">{item.title}</h3>
-                <div className="text-gray-600">{item.content}</div>
+                
+                {/* Shimmer effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                </div>
               </div>
             ))}
           </div>
