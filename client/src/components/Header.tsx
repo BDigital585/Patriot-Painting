@@ -2,10 +2,21 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { useScroll } from "@/hooks/use-scroll";
+import { ChevronDown, PaintBucket, Home, Droplet, Waves, Trash2 } from "lucide-react";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const scrolled = useScroll(50);
+
+  const services = [
+    { name: "Interior Painting", icon: <PaintBucket className="w-4 h-4" />, link: "/services/interior-painting" },
+    { name: "Exterior Painting", icon: <Home className="w-4 h-4" />, link: "/services/exterior-painting" },
+    { name: "Staining", icon: <Droplet className="w-4 h-4" />, link: "/services/staining" },
+    { name: "Power Washing", icon: <Waves className="w-4 h-4" />, link: "/services/power-washing" },
+    { name: "Gutter Cleaning", icon: <Trash2 className="w-4 h-4" />, link: "/services/gutter-cleaning" }
+  ];
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -16,6 +27,7 @@ const Header = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setMobileMenuOpen(false);
+      setServicesDropdownOpen(false);
     }
   };
 
@@ -30,6 +42,18 @@ const Header = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [mobileMenuOpen]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = () => {
+      setServicesDropdownOpen(false);
+    };
+
+    if (servicesDropdownOpen) {
+      document.addEventListener("click", handleClickOutside);
+      return () => document.removeEventListener("click", handleClickOutside);
+    }
+  }, [servicesDropdownOpen]);
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 shimmer ${
@@ -51,12 +75,34 @@ const Header = () => {
           {/* Navigation - Desktop */}
           <div className="hidden md:flex items-center space-x-6">
             <nav className="flex space-x-8">
-              <button 
-                onClick={() => scrollToSection("services")} 
-                className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[#dd1c1c] after:transition-transform hover:after:origin-bottom-left hover:after:scale-x-100 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
-              >
-                SERVICES
-              </button>
+              <div className="relative" onClick={(e) => e.stopPropagation()}>
+                <button 
+                  onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+                  className="flex items-center text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[#dd1c1c] after:transition-transform hover:after:origin-bottom-left hover:after:scale-x-100 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
+                >
+                  SERVICES
+                  <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {/* Services Dropdown */}
+                {servicesDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50">
+                    {services.map((service, index) => (
+                      <Link 
+                        key={index}
+                        href={service.link}
+                        onClick={() => setServicesDropdownOpen(false)}
+                        className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#dd1c1c] transition-colors"
+                      >
+                        <div className="text-[#0a3161] mr-3">
+                          {service.icon}
+                        </div>
+                        <span className="font-medium">{service.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
               <Link 
                 href="/blog"
                 className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[#dd1c1c] after:transition-transform hover:after:origin-bottom-left hover:after:scale-x-100 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
@@ -101,12 +147,37 @@ const Header = () => {
       {/* Mobile Menu */}
       <div className={`md:hidden px-6 pb-4 pt-2 border-t border-gray-100 ${mobileMenuOpen ? "block" : "hidden"} bg-gradient-to-b from-white to-blue-50/30 shadow-md backdrop-blur-sm`}>
         <nav className="flex flex-col space-y-3">
-          <button 
-            onClick={() => scrollToSection("services")} 
-            className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)] text-left"
-          >
-            SERVICES
-          </button>
+          {/* Services with Dropdown */}
+          <div>
+            <button 
+              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+              className="flex items-center justify-between w-full text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)] text-left"
+            >
+              SERVICES
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {mobileServicesOpen && (
+              <div className="ml-4 mt-2 space-y-2">
+                {services.map((service, index) => (
+                  <Link 
+                    key={index}
+                    href={service.link}
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      setMobileServicesOpen(false);
+                    }}
+                    className="flex items-center px-2 py-2 text-gray-600 hover:text-[#dd1c1c] transition-colors text-sm"
+                  >
+                    <div className="text-[#0a3161] mr-2">
+                      {service.icon}
+                    </div>
+                    <span>{service.name}</span>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+          
           <Link 
             href="/blog"
             onClick={() => setMobileMenuOpen(false)}
