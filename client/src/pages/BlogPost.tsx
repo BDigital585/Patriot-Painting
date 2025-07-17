@@ -10,7 +10,7 @@ const BlogPost = () => {
   const [shareOpen, setShareOpen] = useState(false);
 
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
-  const logoUrl = typeof window !== 'undefined' ? `${window.location.origin}/Patriot Painting.png` : '';
+  const socialImageUrl = typeof window !== 'undefined' ? `${window.location.origin}/paintbackground.PNG` : '';
 
   const handleCopyLink = async () => {
     try {
@@ -23,7 +23,7 @@ const BlogPost = () => {
   };
 
   const shareUrls = {
-    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}&picture=${encodeURIComponent(logoUrl)}`,
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}&picture=${encodeURIComponent(socialImageUrl)}`,
     twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(post?.title || '')}&via=PatriotPainting`,
     linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`
   };
@@ -47,14 +47,14 @@ const BlogPost = () => {
       const metaTags = [
         { property: 'og:title', content: post.title },
         { property: 'og:description', content: post.excerpt },
-        { property: 'og:image', content: logoUrl },
+        { property: 'og:image', content: socialImageUrl },
         { property: 'og:url', content: currentUrl },
         { property: 'og:type', content: 'article' },
         { property: 'og:site_name', content: 'Patriot Painting' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: post.title },
         { name: 'twitter:description', content: post.excerpt },
-        { name: 'twitter:image', content: logoUrl },
+        { name: 'twitter:image', content: socialImageUrl },
         { name: 'description', content: post.excerpt }
       ];
       
