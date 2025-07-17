@@ -105,45 +105,36 @@ const ContactSection = () => {
     { 
       icon: <Phone className="w-5 h-5" />, 
       title: "Dustin Garrett", 
-      content: <a href="tel:5853560218" className="hover:text-[#dd1c1c] transition-colors">(585) 356-0218</a>
+      content: <a href="tel:5853560218" className="hover:text-white transition-colors">(585) 356-0218</a>
     },
     { 
       icon: <Phone className="w-5 h-5" />, 
       title: "Justin Schmelzer", 
-      content: <a href="tel:5854153370" className="hover:text-[#dd1c1c] transition-colors">(585) 415-3370</a>
+      content: <a href="tel:5854153370" className="hover:text-white transition-colors">(585) 415-3370</a>
     }
   ];
 
   return (
-    <section id="contact" className="py-16 md:py-24">
+    <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-[#0a3161] to-blue-800 text-white">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#dd1c1c]/10 text-[#dd1c1c] text-sm font-medium mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 text-white text-sm font-medium mb-4">
             Contact Us
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl text-gray-600 mb-12">
+          <p className="text-xl text-blue-100 mb-12">
             Call us directly for a free quote about your painting project. We serve all of Western New York.
           </p>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {contactInfo.map((item, index) => (
-              <div key={index} className="group relative overflow-hidden p-8 bg-gradient-to-br from-white via-blue-50/30 to-red-50/30 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/50 backdrop-blur-sm">
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#dd1c1c]/5 via-transparent to-[#0a3161]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Content */}
-                <div className="relative z-10 flex flex-col items-center text-center">
-                  <div className="flex-shrink-0 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#dd1c1c]/10 to-[#0a3161]/10 text-[#dd1c1c] mb-6 group-hover:scale-110 transition-transform duration-300">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-[#0a3161] transition-colors duration-300">{item.title}</h3>
-                  <div className="text-lg text-gray-700 font-medium group-hover:text-[#dd1c1c] transition-colors duration-300">{item.content}</div>
+              <div key={index} className="flex items-center bg-white/10 px-6 py-3 rounded-lg backdrop-blur-sm">
+                <div className="text-white mr-3">
+                  {item.icon}
                 </div>
-                
-                {/* Shimmer effect */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                <div className="text-center">
+                  <div className="text-white font-semibold">{item.title}</div>
+                  <div className="text-blue-100">{item.content}</div>
                 </div>
               </div>
             ))}
