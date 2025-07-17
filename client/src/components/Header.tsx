@@ -103,20 +103,20 @@ const Header = () => {
         <nav className="flex flex-col space-y-3">
           <button 
             onClick={() => scrollToSection("services")} 
-            className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
+            className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)] text-left"
           >
             SERVICES
           </button>
           <Link 
             href="/blog"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
+            className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)] text-left block"
           >
             BLOG
           </Link>
           <button 
             onClick={() => scrollToSection("contact")} 
-            className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)]"
+            className="text-[#0a3161] hover:text-[#dd1c1c] text-sm font-semibold tracking-wide transition-colors py-2 border-b border-gray-100/50 drop-shadow-[0_0.5px_0.5px_rgba(255,255,255,0.8)] text-left"
           >
             CONTACT
           </button>
