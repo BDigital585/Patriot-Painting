@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 217 91% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 250 84% 59%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 239 84% 67%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar colors - keep defaults */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 20 14.3% 4.1%;
+    --sidebar-primary: 47.9 95.8% 53.1%;
+    --sidebar-primary-foreground: 26 83.3% 14.1%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 240 5.9% 90%;
+    --sidebar-ring: 142.1 76.2% 36.3%;
+
+    /* Chart colors - keep defaults */
+    --chart-1: 0 62% 47%;
+    --chart-2: 141 52% 46%;
+    --chart-3: 217 90% 54%;
+    --chart-4: 291 64% 42%;
+    --chart-5: 56 75% 53%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 217 91% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 250 84% 59%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 239 84% 67%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground relative;
+    font-family: 'Inter', 'SF Pro Display', system-ui, sans-serif;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background-image: url('/paintbackground.PNG');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-attachment: fixed;
+    opacity: 0.08;
+    z-index: -1;
+    pointer-events: none;
+    transform: translateZ(0); /* Force hardware acceleration for smoother rendering */
+    will-change: transform; /* Hint to the browser that this element will change */
+  }
+
+  /* Responsive adjustments for the background image */
+  @media (max-width: 1280px) {
+    body::before {
+      background-size: 70%;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    body::before {
+      background-size: 80%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    body::before {
+      background-size: 90%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    body::before {
+      background-size: 100%;
+    }
+  }
+
+  /* Fix for iOS Safari */
+  @supports (-webkit-touch-callout: none) {
+    body::before {
+      background-attachment: scroll; /* Use scroll instead of fixed for iOS */
+    }
+  }
+
+  /* Blog hero background responsive styles */
+  .blog-hero-bg {
+    background-size: 60% auto;
+  }
+
+  @media (max-width: 768px) {
+    .blog-hero-bg {
+      background-size: 100% auto;
+    }
+  }
+}
+
+@layer utilities {
+  .transition-colors {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  /* Shimmer animation effect for header */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .shimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 25%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.2) 75%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 6s infinite linear;
+    pointer-events: none;
+  }
+  
+  /* Stronger shimmer for buttons */
+  button.shimmer::after {
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 25%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0.3) 75%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 4s infinite linear;
+  }
+}
