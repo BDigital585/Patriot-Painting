@@ -1,13 +1,48 @@
 import { useParams, Link } from "wouter";
-import { blogPosts } from "@/data/blogPosts";
 import { ArrowLeft, Home, Share2, Facebook, Twitter, Linkedin, Copy, Check } from "lucide-react";
 import { useState, useEffect } from "react";
 
+interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  date: string;
+  slug: string;
+  published: boolean;
+  coverImage?: string;
+  tags?: string;
+}
+
 const BlogPost = () => {
   const { slug } = useParams();
-  const post = blogPosts.find(p => p.slug === slug);
+  const [post, setPost] = useState<BlogPost | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
   const [copied, setCopied] = useState(false);
   const [shareOpen, setShareOpen] = useState(false);
+
+  useEffect(() => {
+    if (slug) {
+      fetchPost(slug);
+    }
+  }, [slug]);
+
+  const fetchPost = async (postSlug: string) => {
+    try {
+      const response = await fetch(`/api/blog/posts/${postSlug}`);
+      if (response.ok) {
+        const data = await response.json();
+        setPost(data);
+      } else {
+        setPost(null);
+      }
+    } catch (error) {
+      console.error('Error fetching post:', error);
+      setPost(null);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
   const socialImageUrl = typeof window !== 'undefined' ? `${window.location.origin}/paintbackground.PNG` : '';
@@ -94,6 +129,16 @@ const BlogPost = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [shareOpen]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-gray-600">Loading post...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!post) {
     return (

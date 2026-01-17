@@ -1,8 +1,11 @@
 import { Phone, MapPin, Facebook, Instagram } from "lucide-react";
 import { Link } from "wouter";
+import { useState } from "react";
+import { AdminPinModal } from "./AdminPinModal";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [isPinModalOpen, setIsPinModalOpen] = useState(false);
 
   const services = [
     { name: "Interior Painting", link: "/services/interior-painting" },
@@ -26,10 +29,12 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-2">
-              <img 
-                src="/Patriot Painting.png" 
-                alt="Patriot Painting" 
-                className="h-8 md:h-10 w-auto"
+              <img
+                src="/Patriot Painting.png"
+                alt="Patriot Painting"
+                className="h-8 md:h-10 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+                onClick={() => setIsPinModalOpen(true)}
+                title="Admin Access"
               />
             </div>
             <p className="text-blue-100 mb-2 leading-tight text-xs md:text-sm">
@@ -125,6 +130,12 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Admin PIN Modal */}
+      <AdminPinModal
+        isOpen={isPinModalOpen}
+        onClose={() => setIsPinModalOpen(false)}
+      />
     </footer>
   );
 };
