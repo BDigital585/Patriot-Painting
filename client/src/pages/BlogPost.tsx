@@ -75,7 +75,7 @@ const BlogPost = () => {
         metasToRemove.forEach(meta => meta.remove());
       }
     };
-  }, [post, logoUrl, currentUrl]);
+  }, [post, socialImageUrl, currentUrl]);
 
   // Close share dropdown when clicking outside
   useEffect(() => {
